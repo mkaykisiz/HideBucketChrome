@@ -22,7 +22,7 @@
   "background" : { "scripts" : ["background.js"] },
   "content_scripts": [
     {
-        "matches": ["https://bitbucket.org/*/*/pull-requests/"],
+        "matches": ["https://bitbucket.org/*/*/pull-requests*"],
         "js": ["/content_script.js"]
     }
 ]

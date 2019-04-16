@@ -15,7 +15,11 @@ chrome.storage.sync.get(['not_completed'], function (result) {
 fireReview = () => {
     var reviewers = document.querySelectorAll('td.reviewers');
     Array.prototype.forEach.call(reviewers, function (review) {
-        if ((completed_control && review.getElementsByClassName('badge-hidden').length == 0) || (not_completed_control && review.getElementsByClassName('badge-hidden').length > 0)) {
+        if ((completed_control
+            && review.getElementsByClassName('badge-hidden').length === 0)
+            || (not_completed_control
+                && review.getElementsByClassName('badge-hidden').length > 0)) {
+            console.log(review.parentElement.getElementsByClassName('pull-request-title')[0].title);
             review.closest('tr').remove();
         }
     });
